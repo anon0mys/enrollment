@@ -5,7 +5,7 @@ describe 'User' do
     scenario 'when on /students/:id path' do
       student = Student.create(name: 'Ian')
 
-      visit student_path
+      visit student_path(student)
 
       expect(page).to have_content(student.name)
     end

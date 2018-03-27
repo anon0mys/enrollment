@@ -21,6 +21,20 @@ class StudentsController < ApplicationController
     end
   end
 
+  def edit
+    @student = Student.find(params[:id])
+  end
+
+  def update
+    student = Student.find(params[:id])
+    if student.update(student_params)
+      flash[:sucess] = "#{student.name} was sucessfully updated"
+      redirect_to student_path(student)
+    else
+      flash[:failure] = 'Student was not created'
+    end
+  end
+
   private
 
   def student_params

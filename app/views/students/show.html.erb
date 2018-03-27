@@ -1,1 +1,13 @@
 <h2><%= @student.name %></h2>
+
+<ul>
+  <% @addresses.each do |address| %>
+    <li>
+      <%= address.description %>
+      <%= address.street %>
+      <%= address.city %>
+      <%= address.state %>
+      <%= address.zipcode %>
+    </li>
+  <% end %>
+</ul>

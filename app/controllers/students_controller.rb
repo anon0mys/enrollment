@@ -35,6 +35,16 @@ class StudentsController < ApplicationController
     end
   end
 
+  def destroy
+    student = Student.find(params[:id])
+    if student.destroy
+      flash[:success] = "#{student.name} was successfully deleted"
+      redirect_to students_path
+    else
+      flash[:failure] = "#{student.name} was not deleted"
+    end
+  end
+
   private
 
   def student_params

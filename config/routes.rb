@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   resources :students do
     resources :addresses, only: [:create, :new]
   end
+
+  resources :courses, only: [:show]
 end

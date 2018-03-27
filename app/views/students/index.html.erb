@@ -3,7 +3,7 @@
 <ul>
   <% @students.each do |student| %>
     <li id='<%= student.id %>'>
-      <%= student.name %>
+      <%= link_to "#{student.name}", student_path(student) %>
       <%= button_to 'Delete', { controller: :students, action: :destroy, id: student.id }, method: :delete %>
     </li>
   <% end %>
